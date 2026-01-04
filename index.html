@@ -1,0 +1,249 @@
+<!Doctype HMTL>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0"/>
+    <title>Serpente Racing</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <script>
+const fadeElements = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, { threshold: 0.2 });
+
+fadeElements.forEach(el => observer.observe(el));
+</script>
+
+    <script>
+        let index = 0;
+
+        function moveSlide(Step) {
+            const slides = document.querySelector(".slides");
+            const total = slides.children.length;
+            index += step;
+            
+            if (index < 0) index = total - 1;
+            if (index >= total) index = 0;
+
+            slides.style.transform = 'translateX(${-index * 320}px)';
+        }
+
+        function openImg(src) {
+            document.getElementById("popup").style.display = "flex";
+            document.getElementById("popup-img").src = src;
+        }
+
+        function closeImg() {
+            document.getElementById("popup").style.display = "none"
+        }
+    </script>
+    <script>
+        function openImg(src) {
+            document.getElementById("popup").style.display = "flex";
+            document.getElementById("popup-img").src = src;
+        }
+
+        function closeImg() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+
+    <!--HEADER / NAVBAR -->
+<header class="main-header">
+    <div class="header-left">
+        <img src="ulerkobra.png" alt="Serpente Logo" class="logo">
+        <div class="club-text">
+            <h1>Serpente Racing</h1>
+            <span>Jogjagamers Roleplay</span>
+        </div>
+    </div>
+
+    <nav class="header-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+        <section class="home-section" id="home">
+            <div class="home-container">
+
+                <div class="home-text">
+                    <h1> Serpente Racing Division </h1>
+                    <p>
+                        Komunitas otomotif & balap yang menjunjung kecepatan, solidaritas dan sportivitas
+                    </p>
+
+                    <div class="home-btn">
+                        <a href="#about"> Tentang Kami </a>
+                        <a href="#contact" class="outline">Gabung Club
+                        </a>
+                    </div>
+                </div>
+
+                <div class="home-image">
+                    <img src="ulerkobra.png" alt="Serpente Racing">
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section" id="about">
+            <div class="about-container">
+                <div class="about-image">
+                   <img src="ulerkobra.png" alt="Serpente Racing">
+                </div>
+
+                <div class="about-text">
+                    <h2>Tentang Serpente Racing Division</h2>
+                    <p>
+                        Serpente Racing Division adalah komunitas otomotif dan balap yang dibentuk untuk menyatukan para pecinta kecepatan, performa, dan solidaritas antar anggota.
+                    </p>
+                    <p>
+                        Kami aktif dalam kegiatan balap, modifikasi kendaraan, serta membangun kebersamaan melalui event dan latihan rutin.
+                    </p>
+
+                    <div class="about-features">
+                        <div class="feature">
+                            <h3>🏁 Komunitas Balap & Otomotif</h3>
+                            <p>Tempat berkumpulnya para pecinta kecepatan dan modifikasi kendaraan.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>🤝 Solidaritas & Sportivitas</h3>
+                            <p>Menjunjung tinggi nilai solidaritas dan sportivitas dalam setiap kegiatan.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>📚 Edukasi & Pengembangan Skill</h3>
+                            <p>Meningkatkan kemampuan melalui latihan dan workshop rutin.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>🎭 Wadah Roleplay</h3>
+                            <p>Menjadi wadah bagi pemain untuk mengembangkan roleplay mereka dengan pengalaman baru.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery" id="gallery">
+            <!-- GALERI 4 GAMBAR SIMPLE -->
+            <div class="gallery-container fade-in">
+                <div class="gallery-item">
+                    <img src="mamatjr333.jpg" alt="Gambar 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="mamatjr.jpg" alt="Gambar 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="mamat.jpg" alt="Gambar 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="mamatjr123.jpg" alt="Gambar 4">
+                </div>
+            </div>
+
+            <!-- HEADER & DESKRIPSI DI BAWAH -->
+            <div class="gallery-header fade-in">
+                <h2>Serpente Racing Gallery</h2>
+                <div class="neon-line"></div>
+                <p>
+                    Dokumentasi racing, roleplay, dan momen terbaik Serpente Racing Division
+                </p>
+            </div>
+        </section>
+
+        <!-- POPUP -->
+         <div class="popup" id="popup">
+            <span class="close" onclick="closeImg()">×</span>
+            <img id="popup-img" alt="Popup Image">
+         </div>
+
+
+
+    <!-- HERO BANNER -->
+     <section class="cards">
+        <div class="container">
+            <h1 class="fade-in">WELCOME TO OUR SERPENTE WEBSITE</h1>
+            <h2 class="fade-in">Tentang Serpente Racing Division</h2>
+            <p class="fade-in"> Serpente Racing Division adalah club mobil yang berada di server Jogjagamers. Kami berfokus pada dunia otomotif, balap, dan kebersamaan antar anggota.</p>
+        </div>
+     </section>
+     <section class="cards">
+        <div class="container card-grid">
+
+            <div class="card fade-in">
+                <h3>Visi</h3>
+                <p>Menjadi komunitas otomotif terdepan yang menginspirasi inovasi, solidaritas, dan disegani.</p>
+            </div>
+
+            <div class="card fade-in">
+                <h3>Misi</h3>
+                <p>Mengembangkan kemampuan balap melalui latihan intensif, memupuk solidaritas antar anggota, mendorong kreativitas dalam modifikasi kendaraan, serta menciptakan pengalaman roleplay yang mendalam dan berkesan.</p>
+            </div>
+
+            <div class="card fade-in">
+                <h3>Aktivitas</h3>
+                <p>
+                    Street Race, Track Day, Event Komunitas, dan latihan rutin.
+                </p>
+            </div>
+
+        </div>
+
+   </section>
+
+     <!-- TENTANG KAMI -->
+      <section id="tentang" class="section">
+        <div class="container">
+            <h2>Kami adalah club mobil bernama SERPENTE RACING DIVISION yang berada di server Jogjagamers, dengan adanya kami disini kami ingin mengembangkan tentang roleplay club mobil.</h2>
+            <p>Ini adalah wadah dimana player dapat mengembangkan roleplay mereka dan mereka mendapatkan pengalaman baru tentang roleplay, kami disini juga membantu character development.</p>
+        </div>
+      </section>
+
+      <!-- KOMUNITAS -->
+       <section id="komunitas" class="section b-light">
+        <div class="container">
+            <h2>Bergabunglah bersama kami, maka anda akan mendapatkan atsmofer yang berbeda dari sebelumnya dan juga dan akan pengalaman baru.</h2>
+            <p>We are SERPENTE</p>
+        </div>
+       </section>
+
+       <section class="contact" id="contact">
+    <h2 class="fade-in">Contact Serpente Racing</h2>
+    <p class="fade-in contact-desc">
+        Tunggu apalagi? Ayo join ke discord Serpente
+    </p>
+
+    <div class="contact-box fade-in">
+        <p>📧 Email: serpenteracing@gmail.com</p>
+        <p>
+    💬 Discord:
+    <a href="https://discord.gg/VW7QFw2Nwb" target="_blank">
+        Serpente Racing
+    </a>
+</p>
+
+        <p>📸 Instagram: @serpenteracing</p>
+    </div>
+</section>
+
+
+        <!-- FOOTER -->
+         <footer class="footer">
+            <div class="container">
+                <p>All Rights Reserverd Serpente</p>
+            </div>
+        </footer>
+
+
+</body>
+</html>
